@@ -4,7 +4,7 @@ If you don't like *Vim* feel free to use *Nano*, a simple to use command line ed
 
 === Basic Commands
 
-TIP: *Ctrl-<n>* or *Alt-<n>* means press and holt the Control or Alt key and then press the character after the dash. 
+TIP: *Ctrl-<n>* or *Alt-<n>* means press and hold the Control or Alt key and then press the character after the dash. 
 
 To create a new file or open an existing file:
 ----
@@ -16,8 +16,10 @@ TIP: When Nano asks for confirmation, it expects a *y* for yes or *n* for no.
 To save the current file in Nano:
 
 ----
-Ctrl-o y Enter
+Ctrl-o
 ----
+
+TIP: Depending if the file was changed or not Nano will ask for confirmation and the file name.
 
 To leave Nano without saving the file (if something went wrong while editing and you just want out without changing anything):
 ----
@@ -39,9 +41,24 @@ Move the cursor to the position where you want it and paste:
 Ctrl-u
 ----
 
-For the full documentation go https://www.nano-editor.org/dist/v3/nano.html[here] or use the man page.
+=== Show Whitespaces
+
+Ansible uses YAML so it comes in handy to mark whitespaces (or reveal *tabs* ;-). 
+
+* First use Nano to create a _.nanorc_ file in your home directory so it looks like this:
+----
+set whitespace "»·"
+----
+
+* To toggle *tab* and *whitespace* display in Nano just press *Alt-p*.
+
+=== More Help
+
+For the full documentation for Nano 2 (included in RHEL 7) go https://www.nano-editor.org/dist/v2.2/nano.html[here], for the recent version 3 go here https://www.nano-editor.org/dist/v3/nano.html[here] or use the man page.
 
 === Syntax Highlighting
+
+WARNING: This will not work for older Nano version (like in RHEL 7).
 
 To enable syntax highlighting for YAML files:
 ----
@@ -96,6 +113,4 @@ include /usr/share/nano/*
 
 TIP: This `.nanorc` will enable YAML and all other syntax highlighting coming with Nano.
 
-=== Show Whitespaces
 
-Ansible uses YAML so it comes in handy to mark whitespaces from time to time. In Nano just press *Alt-p* to toggle whitespaces.
